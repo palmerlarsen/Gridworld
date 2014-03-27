@@ -16,9 +16,13 @@ package gridworld.am.ctec.firstProject;
  * @author Cay Horstmann
  */
 
+import java.awt.Color;
+
 import info.gridworld.actor.ActorWorld;
 import info.gridworld.actor.Bug;
+import info.gridworld.actor.Flower;
 import info.gridworld.actor.Rock;
+import info.gridworld.grid.Location;
 
 /**
  * This class runs a world that contains a bug and a rock, added at random
@@ -34,8 +38,16 @@ public class BugRunner
     {
         ActorWorld world = new ActorWorld();
        // world.add(new Bug());
-       // world.add(new Rock());
+        world.add(new DeathRock());
         world.add(new TriangleBug(3));
+        world.add(new SpawnBug());
         world.show();
+      //  world.add(new HungryCritter());
+      //  world.add(new Location(7, 8), new Rock());
+      //  world.add(new Location(3, 3), new Rock());
+      //  world.add(new Location(2, 8), new Flower(Color.BLUE));
+     //   world.add(new Location(5, 5), new Flower(Color.PINK));
+     //   world.add(new Location(1, 5), new Flower(Color.RED));
+    //    world.add(new Location(7, 2), new Flower(Color.YELLOW));
     }
 }

@@ -11,21 +11,40 @@ public class TriangleBug extends Bug
 	
 	private int movement;
 	private int sideLength;
+	private int side;
 	
 	public TriangleBug(int length)
 	{
+		
+		setDirection(Location.NORTH);
 		movement = 0;
 		sideLength = length;
+		side = 1;
 	}
 	
-	public void move()	
+
+	public void act()	
 	{
 		
-		while(movement < sideLength && canMove())
+		if(side < 5 && movement < sideLength && canMove())
 		{
 			move();
 			movement++;
 		}
+		else if (side ==1)
+		{
+			setDirection(Location.EAST);
+			movement = 0;
+			side++;
+		}
+		else if (side == 2)
+		{
+			setDirection(Location.SOUTHWEST);
+			movement = 0;
+		}
+		
+			
+		
 		
 	}
 	
